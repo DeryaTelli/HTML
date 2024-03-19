@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--  
+        DATA ETIKET KULLANIMI
+    -->
+    <p>Bugünün tarihi: <data value="2024-03-19">19 Mart 2024</data>.</p>
+    <!-- data belli bir degeri temsil etmek ve okunabilir olmasi icin kullanilir  -->
+    
+    <!-- 
+        DATALIST ETIKET KULLANIMI
+    -->
+    <label for="browser">Bir tarayıcı seçin:</label>
+    <input list="browsers" id="browser" name="browser">
+    <datalist id="browsers">
+        <!-- inputsecimlerini listesini olusturmak icni kullanilir  -->
+        <option value="Chrome">
+        <option value="Firefox">
+        <option value="Safari">
+        <option value="Edge">
+        <option value="Opera">
+    </datalist>
+
+    <!-- 
+        DETAILS ETIKET KULLANIMI
+    -->
+    <!-- detay eklemek icin kullanilir  -->
+    <details>
+        <!-- summary etiketi baslik olarak kullanilir  -->
+        <summary>Detayları Gör</summary>
+        <!-- icerik ise p etiketidir  -->
+        <p>Burada detaylı içerik yer alabilir.</p>
+    </details>
+
+    <!-- 
+        DIALOG ETIKET KULLANIMI 
+    -->
+
+    <!-- dialog etiketi kullanici arayuzunde bir iletisim kutusu veya bir diyalog kutusu olusturmak icin kullanilir  -->
+    <!-- uyari kutusu aciyor mesela siferyi yanlis girdiniz derken kullanilan gibi  -->
+    <button id="openDialog">Diğer bilgileri gör</button>
+
+    <dialog id="additionalInfo">
+    <h2>Ek Bilgiler</h2>
+    <p>Bu alanda ek bilgiler yer alabilir.</p>
+    <button id="closeDialog">Kapat</button>
+    </dialog>
+
+    <script>
+    var openButton = document.getElementById('openDialog');
+    var dialog = document.getElementById('additionalInfo');
+    var closeButton = document.getElementById('closeDialog');
+
+    // Diyalog kutusunu aç
+    openButton.addEventListener('click', function() {
+        dialog.showModal();
+    });
+
+    // Diyalog kutusunu kapat
+    closeButton.addEventListener('click', function() {
+        dialog.close();
+    });
+    </script>
+
+    <!-- 
+        FIGCAPTION ETIKET KULLANIMI
+    -->
+    <figure>
+        <img src="resim.jpg" alt="Bir resim">
+        <!-- resim veya medya ogesini tanimlamak icin kullanilir  -->
+        <figcaption>Bu bir resmin açıklamasıdır.</figcaption>
+    </figure>    
+    
+    <!-- 
+        MAIN ETIKET KULLANIMI
+    -->
+    
+        <!-- html icindeki asil icerik bolumunu tanimlamak icin kullanilir bir html belgesinde yanlizca bir tane main etiketi bulunabilir  -->
+        <header>
+            <!-- Sayfa üstbilgi içeriği -->
+        </header>
+
+        <nav>
+            <!-- Navigasyon menüsü içeriği -->
+        </nav>
+
+        <main>
+            <!-- Ana içerik bölümü -->
+            <h1>Merhaba Dünya!</h1>
+            <p>Bu, web sayfasının ana içeriği.</p>
+        </main>
+
+        <footer>
+            <!-- Sayfa altbilgi içeriği -->
+        </footer>
+    
+    
+    <!-- 
+        MARK ETIKET KULLANIMI
+    -->
+    <!-- icine yazdigini metini texti ustunu highlihted yapar -->
+    <p>Bu bir <mark>önemli</mark> nottur.</p>
+    <p><mark>Önemli:</mark> Bu promosyon fiyatları sınırlı bir süre için geçerlidir.</p>
+
+    <!-- MENUITEM ETIKET KULLANIMI 
+    -->
+    <!-- menuitem cok tercih edilememektedir artik onun yerine button veya a etiketli kullanilir -->
+    <menu type="context">
+        <menuitem label="Kopyala" icon="copy.png" onclick="">Kopyala</menuitem>
+        <menuitem label="Yapıştır" icon="paste.png" onclick="">Yapıştır</menuitem>
+        <menuitem label="Kes" icon="cut.png" onclick="">Kes</menuitem>
+    </menu>
+
+    <!-- METER ETIKET KULLANIMI
+    -->
+    <!-- bir olcum veya bir aralik icindeki bir degeri temsil etmek icin kullanilir  ornegin yukleniyor cubugunu dusun onun gibi -->
+    <label for="diskUsage">Disk Kullanımı:</label>
+    <meter id="diskUsage" value="90" min="0" max="100"> %60 dolu</meter>
+
+    <!-- PROGRESS ETIKET KULLANIMI -->
+    <!-- bir dosyanin indirme ilerlemesini gosterebilir  -->
+    <label for="fileProgress">Dosya İndirme İlerlemesi:</label>
+    <progress id="fileProgress" value="50" max="100"> %50 tamamlandı </progress>
+
+    <!-- RUBY RT RP ETIKET KULLANIMI -->
+
+    <p>I <ruby>study<rp>(</rp><rt>ˈstʌdi</rt><rp>)</rp></ruby> Japanese.</p>
+    <!-- study ifadesinin yaninda japonca telafuzunu gostermek icin kullanilir ruby  
+    ruby aciklama telefafuz icin kullanilir 
+    rt telafuz aciklamasini rt icine veririz
+    rp tarayicilar tarafindan desteklenmediginde yedek icerigi belirtmek icin kullanilir
+    -->
+
+    <!-- SECTION ETIKET KULLANIMI  -->
+
+    <!-- html icinde bagimsiz bir bolumu veya bolumleri belirtmek icin kullanilir  -->
+    <section>
+        <h2>Ürünler</h2>
+        <ul>
+            <li>Ürün 1</li>
+            <li>Ürün 2</li>
+            <li>Ürün 3</li>
+        </ul>
+    </section>
+    <section>
+        <h2>Hakkımızda</h2>
+        <p>Firma hakkında bilgi.</p>
+    </section>
+    <section>
+        <h2>İletişim</h2>
+        <p>İletişim bilgileri.</p>
+    </section>
+    
+    <!-- SVG ETIKET KULLANIMI -->
+
+    <!-- xml tabanli bir bicimdir ve vektor grafiklerin olusturulmasi duzenlenmesi icin kullanilan bir standarttir -->
+    <svg width="200" height="200">
+        <circle cx="100" cy="100" r="80" fill="red" />
+        <rect x="50" y="50" width="100" height="100" fill="blue" />
+        <!-- rect etiketi dikdortgen yapar  -->
+        <text x="80" y="120" font-family="Verdana" font-size="20" fill="white">SVG Örneği</text>
+    </svg>
+    
+    <!-- TIME ETIKET KULLANIMI -->
+
+    <!-- time etiketi kullanilara datetime ozeligi kullanilmistir tarihin makine tarafindan kolay okunmasini sagalar  -->
+    <p>Bu belge <time datetime="2024-03-19T12:00:00">19 Mart 2024, 12:00</time> tarihinde güncellendi.</p>
+
+    <!-- WBR ETIKET KULLANIMI -->
+
+    <!-- kelime aralignda bir kesme noktasi saglar tarayicilar sayfa boyutlarina bagli olarak kelimenin bu noktada bolunmesine izin verebilirler ozellikle uzun kelimeler veya urler gibi kesilmemesi istenen iceriklerde kullanilir  -->
+    <!-- textleri keserek kendi alanlarini almalarini sagliyor  -->
+    <p>UzunBirKelime<wbr>UzunBirKelime<wbr>UzunBirKelime<wbr>UzunBirKelime</p>
+
+
+
+</body>
+</html>
