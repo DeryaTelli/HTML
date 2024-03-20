@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Images and Images Maps Example</title>
+</head>
+<body>
+    <h1>Resim ve Resim Haritası Örneği</h1>
+    <!-- Bir resim ekleme -->
+    <img src="https://www.harita.gov.tr/uploads/photos/products/13000000-olcekli-turkiye-ve-cevre-ulkeler-siyasi-haritasi-670-1000-1000.jpg" alt="Ülke Haritası" usemap="#harita">
+    
+    <!-- Resim haritasını tanımlama -->
+    <map name="harita">
+        <!-- Resim haritası alanları tanımlama -->
+        <area shape="rect" coords="0,0,100,100" alt="Kuzey" href="kuzey.html">
+        <area shape="rect" coords="100,0,100,100" alt="Güney" href="guney.html">
+        <area shape="rect" coords="0,100,100,100" alt="Doğu" href="dogu.html">
+        <area shape="rect" coords="100,100,100,100" alt="Batı" href="bati.html">
+    </map>
+</body>
+</html>

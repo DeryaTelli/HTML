@@ -56,6 +56,52 @@
         Example Website
     </a>
     
+    <!-- SRC OZELLIGININ KULLANIMI -->
 
+    <!-- src img etiketinin icinde kullanilan dosya uzantisini veya yolunu belirtmek icin kullanilan ozelliktir  -->
+    <img src="resimler/kedi.jpg" alt="Sevimli bir kedi">
+    <p>Bu, bir kedi resminin HTML'de src etiketi kullanılarak eklenmiş bir örneğidir.</p>
+
+
+    <!-- ASYNC OZELLIGININ KULLANILMASI  -->
+
+    <!-- etik dosyalarının asenkron olarak yüklenmesini sağlar. Bu, tarayıcının betik dosyasını yüklerken belgeyi bekletmeden devam etmesine olanak tanır.  -->
+    <!-- betiklerin sirali yuklenmesini garanti etmez-->
+    <script async src="script.js"></script>
+
+
+    <!-- DEFET OZELLIGININ KULLANILMASI -->
+
+    <!-- betik dosyalarının belge yüklenmesi sırasında indirilmesini sağlar, ancak yürütülmesini belge işleme aşamasında erteler. Bu, betik dosyalarının belge içeriğinin tamamını işlemesine izin verilirken yüklenebilmesini sağlar.  -->
+    <script defer src="script.js"></script>
+
+    <!-- CHARSET OZELLIGININ KULLANILMASI  -->
+    <!-- Karakter seti, belgenin içindeki metinlerin hangi karakter kodlamasıyla kodlandığını tanımlar. 
+    Doğru karakter seti belirtilmediğinde,
+    tarayıcı metinleri doğru şekilde işleyemez ve yanlış karakterler gösterebilir.  -->
+    <!-- meta etiketi icinde kullanilir 
+    <meta charset="UTF-8">
+    -->
+
+    <!-- CROSSORIGIN OZELLIGININ KULLANILMASI -->
+
+    <!-- tarayicilarin jaynaklarin kokeni arasindaki guvenlik politikalarini kontrol etmelerine olanak tanir  -->
+    <!-- bir dis betik dosyasini yuklerken bu betik dosyasinin kaynagini kokeniyle belirtilen kokenin farkli oldugu durumlarda tarayicilar bu dosyalarinin yuklenmesini engelleyebilir  -->
+    <script src="https://example.com/externalscript.js" crossorigin="anonymous"></script>
+
+
+    <!-- NONCE OZELLIGININ KULLANILMASI -->
+
+    <!-- tarayici belirli bir guvenlik anahtari kullanarak belirli kaynaklari yuklemelerine izin verir bu xss saldirilarini onlemek icin kullanilabilir
+    sayfa sunucusu rastgele bir deger olusturur ve bu degeri nonce ozniteligi olarak ekler Tarayivi daha sonra yanlizca bu degere sahip olan kaynaklari yukler  -->
+    <script src="trustedscript.js" nonce="abc123"></script>
+
+
+    <!-- INTEGRITY OZELLIGINI KULLANILMASI  -->
+
+    <!-- bir bütünlük kontrol algoritması olan SHA-256 gibi bir kriptografik karmayı belirtirsiniz.
+    Tarayıcı bu karma değeri kullanarak kaynağı indirir ve indirilen dosyanın karması ile önceden belirlenmiş karmayı karşılaştırır.
+    Eğer karşılaştırma başarısız olursa, tarayıcı kaynağı yüklemeyi durdurur ve kullanıcıya bir hata mesajı gösterir. -->
+    <script src="https://example.com/script.js" integrity="sha256-B8A9gjZwfxJfoB1XlX8HcTVeKcM0mGzGAM0zKYc/oIg="></script>
 </body>
 </html>

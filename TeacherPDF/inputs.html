@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- TEXTAREA -->
+
+    <label for="username">User Name:</label>
+    <input type="text" id="username" name="username" placeholder="Enter your user name">
+    <!-- placeholder icerik bilgisini veriyor  -->
+    <br>
+
+    <!-- PASSWORD AREA -->
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" placeholder="Enter your password">
+    <br>
+
+    <!-- CHECKBOX -->
+    <input type="checkbox" name="terms" id="terms">
+    <label for="terms">Accept the terms of use</label>
+    <br>
+
+    <!-- RADIO -->
+    <input type="radio" id="male" name="gender" value="male">
+    <label for="male">Male</label>
+    <br>
+
+    <input type="radio"  name="gender" id="female" value="female">
+    <label for="female">Female</label>
+    <br>
+
+    <!-- BUTTON -->
+    <input type="button" value="Send">
+    <br>
+    <!-- submit turu formun sunucuya gonderilmesini tetikler -->
+    <input type="submit" value="Send">
+    <br>
+    <!-- reset turu ise formu sifirlama islemini gerceklestirir -->
+    <input type="reset" value="Reset">
+    <br>
+
+    <!-- FILE DOWNLOAD -->
+    <!-- multiple ozelligi kullanilarak coklu dosya secmelerine izin verir -->
+    <!-- dosya yukleme alani kullaniciya bilgisayardan bir dosya secmesine izin verir  -->
+    <input type="file" id="avatar" name="avatar" accept=".pdf, .doc , .docx">
+    <!-- accept ozelligi yuklenecek dosya turlerini belirtmek icin kullanilir  -->
+    <br>
+
+    <!-- ACTION OZELLIGININ KULLANIMI -->
+    <!-- formun gonderilecegi urlyi beliryir yani form verileri bu urlye gonderilecektir  -->
+    <form action="/submit_form.php" method="post">
+    <br>
+    
+    <!-- METHOD OZELLIGININ KULLANIMI -->
+    <!-- get: from verileri url parametreleri olarak gonderilir urlde gorunur ve genellikle 
+    verilerin guvenli olmadigi veya cokfazla veri gondermenin uygun olmadigi durumlarda kullanilir
+    -->
+    <!-- post: form verileri http istegi govdesinde gonderilir urlde gorunmez ve daha fazla veri 
+    gonderme kapasitesine sahiptir genellikle guvenli veya buyuk veri gonderme durumlarinda kullanilir 
+    -->
+    <form action="/submit_form.php" method="post">
+    <br>
+        
+    <!-- ENCTYPE OZELLIGININ KULLANIMI -->
+    <!-- form verilerinin sunucuya gönderilirken hangi kodlama türünün kullanılacağını belirtir
+    . Bu özellik genellikle dosya yükleme gibi durumlar için kullanılır. -->
+    <!-- "application/x-www-form-urlencoded": Form verileri standart URL kodlaması ile kodlanır ve gönderilir.
+    Bu varsayılan kodlama türüdür. 
+    -->
+    <!-- "multipart/form-data": Form verileri çok parçalı bir yapıda (multipart) gönderilir.
+    Bu, dosya yüklemesi gibi durumlar için gereklidir.
+    -->
+    <form action="/submit_form.php" method="post" enctype="multipart/form-data">
+    <br>
+
+    <!-- ACCEPTCHARSET OZELLIGININ KULLANIMLARI -->
+    <!--form etiketi içinde kullanılan ve formun sunucuya gönderdiği verilerin hangi karakter kodlamasıyla gönderileceğini belirten bir özelliktir. Bu özellik, 
+    formun karşıya yüklediği verilerin doğru şekilde işlenmesini sağlamak için önemlidir.  -->
+    <form action="/submit_form.php" method="post" accept-charset="UTF-8">
+        <!-- Form alanları buraya gelecek -->
+    </form>
+    <br>
+
+
+    <!-- DISABLED OZELLIK KULLANIMLARI -->
+    <!-- CHECKED  OZELLIK KULLANIMLARI  -->
+    <!-- MULTIPLE OZELLIK KULLANIMLARI  -->
+    
+    <!-- disabled:devre disi birakir ve text alani icinde hic birsey eklenmesine izin vermez  -->
+    <input type="text" id="username" placeholder="Enter your user name" disabled>
+    <br>
+
+    <!-- checked:checkbox ozeliginin secili gelmesini saglar  -->
+    <input type="checkbox" id="rememver" name="remember" checked>
+    <label for="remember">Remember me</label>
+    <br>
+
+    <!--multiple: bir acilir menu olusturulur bu kulanicinin birden fazla secenegi secmesine olanak tanir-->
+    <select name="colors" id="colors" multiple>
+        <option value="red">Red</option>
+        <option value="green">Green</option>
+        <option value="blue">Blue</option>
+        <option value="red">Red</option>
+        <option value="green">Green</option>
+        <option value="blue">Blue</option>
+        <option value="red">Red</option>
+        <option value="green">Green</option>
+        <option value="blue">Blue</option>
+    </select>
+    <br>
+
+    <!-- NOVALIDATE OZELLIGININ KULLANIMI -->
+    <!-- formun gonderilirken tarayici tarafindan dogrulanmasini devre disi birakir yani
+    yani form gonderilirken tarayici formdaki giris alanlarinin gecerliligini kontrol etmez 
+    ve gonderilen verileri dogrulamaz  -->
+    <form action="/submit_form.php" method="post" novalidate>
+    <br>
+
+    <!-- AUTOCOMPLETE OZELLIGININ KULLANIMI -->
+
+    <!-- tarayicinin otomatik tamamlama onerilerini gerceklestirir -->
+    <input type="text" id="city" name="city" autocomplete="off" placeholder="City">
+    <br>
+
+    <!-- READONLY OZELLIGININ KULLANIMI -->
+
+    <!-- metin giris alani olsuturduk bu alan kulanici tarafindan degistirilemez sadece okunur bu ozelligi readonly saglar  -->
+    <input type="text" id="readonly" name="readonly" value="Bu alan salt okunurdur" readonly>
+    <br>
+
+    <!-- REUIRED OZELLIGININ KULLANIMI -->
+
+    <!-- reuired ozelligi eklenen form elemani doldurulmalidir bu islem yapilmaz ise form gonderilmez -->
+    <input type="email" name="email" id="email" placeholder="Your Email" required>
+    <br>
+
+    <!-- AUTOFOCUS OZELLIGININ KULLANIMI -->
+
+    <!-- sayfa yuklendiginde bu alanin otomatik olarak odaklanilmasini saglar -->
+    <input type="text" id="username" name="username" placeholder="Kullanıcı adınızı girin" autofocus>
+    <br>
+
+    <!-- STEP OZELLIGININ KULLANIMI -->
+    <!-- bir sayi giris alani olsuturur step ozeligi kullanicin degerini atririrken veya azaltirken kullanilacak adimi belitirtir
+    ornegin asagidaki ornekte adim degeri 1 olarak belirlenmistir yani kullanici yalnizca birer birer deger artirabilir veya azaltabilir 
+    -->
+    <input type="number" id="quantity" name="quantity" min="1" max="10" step="1">
+    <!-- verilen stepe gore artma degisecektir  -->
+    <br>
+
+    <!-- FIELDSET ETIKETININ KULLANILMASI  -->
+
+    <!-- form elemanlarini gruplamak ve bu gruplara baslik eklemek icin kullanilir  -->
+    <fieldset>
+        <legend>Communication Information</legend>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br>
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email"><br>
+    </fieldset>
+
+    <fieldset>
+        <!-- legend baslik icin kullanir fieldset icinde  -->
+        <legend>Product Information</legend>
+        <label for="product">Product Name:</label>
+        <input type="text" id="product" name="product"><br>
+        <label for="quantity">Piece:</label>
+        <input type="number" id="quantity" name="quantity" min="1"><br>>
+    </fieldset>
+    
+    <input type="submit" value="Send">
+    <br>
+    
+
+    <!-- MINLENGTH AND MAXLENGHT OZELLIGININ KULLANIMI -->
+    
+    <!-- minlenght ve maxlenght karakter sayisini belirtmek icin kullanilir  -->
+    <label for="username">Kullanıcı Adı:</label>
+    <input type="text" id="username" name="username" minlength="4" placeholder="En az 4 karakter">
+    <br>
+    <label for="comment">Yorumunuz:</label>
+    <textarea id="comment" name="comment" maxlength="200" placeholder="En fazla 200 karakter">
+    </textarea>
+    <br>
+
+    <!-- RANGE OZELLLIGININ KULLANIMI -->
+
+    <label for="volume">Ses Seviyesi:</label>
+    <!-- kaydirma cubugu olusturur range min max ozelligi kaydirma cubugunun min ve mas degerlerini belirtir -->
+    <input type="range" id="volume" name="volume" min="0" max="100" value="50">
+    <br>
+
+    <!-- PATTERN OZELLIGININ KULLAIMI -->
+    <!-- formlarda kullanilan ve bir giris alaninin girilen degerleri kontrol etmek icin kullanilan bir ozelliktir  -->
+    <!-- bu ozellik giris alanina girilebilecek karakterlerin desenini belirler ve bu desene uymayan degerler girilirse kullaniciya uyari verir  -->
+    <label for="phone">Phone Number:</label>
+    <input type="text" id="phone" name="phone" patter="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890">
+    <br>
+    
+    <!-- ALERT OZELLIGININ KULLANIMI -->
+
+    <!--tarayicida basit bir uyariiletisim kutusu gostermek icin kullanilir -->
+    <input type="button" onclick="alert('Hello World')" value="Click Me">
+    <br>
+
+    <!-- MENU ETIKETININ KULLANIMI -->
+
+    <!-- bir menu olusturu ve bir menu olusturmak icin kullanilan bir ozelliktir  -->
+    <button id="menuButton">Show Menu</button>
+    <!-- Menü tanımı -->
+    <menu type="toolbar" id="myMenu">
+        <li><a href="#">Seçenek 1</a></li>
+        <li><a href="#">Seçenek 2</a></li>
+        <li><a href="#">Seçenek 3</a></li>
+    </menu>
+    <script>
+        // Düğme ve menüyü alma
+        var menuButton = document.getElementById('menuButton');
+        var myMenu = document.getElementById('myMenu');
+        // Düğme tıklandığında menüyü gösterme
+        menuButton.addEventListener('click', function() {
+        myMenu.show();
+        });
+    </script>
+    <br>
+
+    <!-- HIDDEN OZELLIGININ KULLANIMI -->
+    <!-- kullaniciya goruntulenmeyen bir deger saglamak icin kullanilir -->
+    <input type="hidden" name="user_id" value="123">
+    <br>
+
+    <!-- TEL OZELLIGININ KULLANIMI -->
+    <!-- telefon numarasini giris alani olarak kullanir -->
+    <input type="tel" id="phone" name="phone" placeholder="Telefon Numarası">
+    <br>
+
+    <!-- EMAIL OZELLIGINI KULLANIMI -->
+    <!-- e-posta adresini giris alani olarak kullanir -->
+    <input type="email" id="email" name="email" placeholder="E-posta Adresi">
+    <br> 
+
+    <!-- SEARCH OZELLIGININ KULLANIMI -->
+    <!-- arama kutusu gostermek icin kullanilir -->
+    <input type="email" id="email" name="email" placeholder="E-posta Adresi">
+    <br>
+
+    <!-- WEEK OZELLIGININ KULLANIMI -->
+    <!-- hafta ve yil icindeki hafta numarasi icin kullanilir -->
+    <input type="week" id="week" name="week">
+    <br>
+
+    <!-- URL OZELLIGININ KULLANIMI -->
+    <!-- url adres girisi icin kullanilir -->
+    <input type="week" id="week" name="week">
+    <br>
+
+    <!--DATETIME LOCAL OZELLIGININ KULLANIMI  -->
+    <!-- tarih ve saat secimi icin kullanir yerel saatdilimindeki tarih ve saat secimini saglar  -->
+    <input type="datetime-local" id="meeting_time" name="meeting_time">
+    <br>
+
+    <!-- MONTH OZELLIGINI KULLANIMI  -->
+    <!-- ay ve yil icindeki ay numarasi icin kullanilir -->
+    <input type="month" id="birth_month" name="birth_month">
+    <br>
+
+    <!-- TIME OZELLIGININ KULLANIMI -->
+    <!-- saat ve dakika icindeki saat numarasi icin kullanilir -->
+    <input type="time" id="appointment_time" name="appointment_time">
+    <br>
+
+
+    <!-- 
+    onblur: Bir alan odak kaybettiğinde tetiklenir.
+    Kullanıcı bir alanı doldurduktan sonra odakı kaybettiğinde bu olay gerçekleşir.
+    
+    onchange: Bir alanın değeri değiştiğinde tetiklenir. 
+    Kullanıcı bir değeri değiştirdiğinde veya bir seçeneği seçtiğinde bu olay gerçekleşir.
+    
+    oncontextmenu: Kullanıcı bir öğeye sağ tıkladığında tetiklenir. 
+    Örneğin, bir metin kutusuna sağ tıkladığında bu olay gerçekleşir.
+    
+    onfocus: Bir alan odaklandığında tetiklenir.
+    Kullanıcı bir alana tıkladığında veya o alana klavyeyle odaklandığında bu olay gerçekleşir.
+    
+    oninput: Bir alanın değeri değiştiğinde herhangi bir kullanıcı etkileşimi olmadan tetiklenir. 
+    Kullanıcı bir alana yazı yazarken veya değeri değiştirirken bu olay gerçekleşir.
+    
+    oninvalid: Bir alanın değeri doğrulanamadığında tetiklenir. 
+    Örneğin, bir zorunlu alanı doldurmadan formu göndermeye çalıştığınızda bu olay gerçekleşir.
+    
+    onreset: Bir form sıfırlandığında tetiklenir. 
+    Kullanıcı bir formu sıfırladığında veya bir sıfırlama düğmesine tıkladığında bu olay gerçekleşir.
+    
+    onsearch: Bir arama kutusunda bir arama yapıldığında tetiklenir. 
+    Kullanıcı bir arama kutusuna bir değer yazdıktan sonra arama düğmesine tıkladığında veya Enter tuşuna bastığında bu olay gerçekleşir.
+    
+    onselect: Bir metin seçildiğinde tetiklenir. 
+    Kullanıcı bir metin kutusunda bir metin seçtiğinde bu olay gerçekleşir.
+    
+    onkeydown, onkeypress, onkeyup: Kullanıcı bir tuşa basıldığında, 
+    basılı tutulduğunda veya bırakıldığında sırasıyla tetiklenir. Bu olaylar klavye etkileşimlerini takip etmek için kullanılır.
+    -->
+
+
+
+</body>
+</html>
