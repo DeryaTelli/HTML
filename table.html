@@ -6,7 +6,7 @@
     <title>Table</title>
 </head>
 <body>
-    <table border="2">
+    <table border="5">
     <!-- tablo tanimi baslangici  -->
     <caption> Country and Population</caption>
 
@@ -15,18 +15,26 @@
         <!-- baslik satiri tanimi basi -->
         <th>Country Name</th>
         <th>Population</th>
+        <th>a</th>
+        <th>b</th>
     </tr>
     <!-- baslik satiri tanimi sonu  -->
     <tr>
         <!-- ilk satir tanimi basi -->
         <td>Germany</td>
         <td>80.000,000</td>
+        <th colspan="2">a</th>
+        <!-- ikitane sutn boslugu birakiyor yatayda  -->
+        <th>b</th>
     </tr>
     <!-- ilk satir tanimi sonu -->
 
     <tr>
         <td>Turkey</td>
         <td>73,000,000</td>
+        <th rowspan="2">Lo.</th>
+        <!-- dikeyde satir boslugu  -->
+        <th>Iusto.</th>
     </tr>
 
     <tr>
@@ -39,7 +47,7 @@
     <br><br>
 
 
-    <table border="2" cellspacing="0" cellpadding="5">
+    <table border="2" cellspacing="0" cellpadding="10">
         <tr>
             <td>Tek hucreli tablo.</td>
         </tr>
